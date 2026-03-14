@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Website</title>
+</head>
+
+<body>
+    <nav class="navbar">
+        <img src="Images/logo.png" id="icon">
+        <ul>
+            <li><a href="/Website/index.html">Home</a></li>
+            <li id="Work">
+                <a href="#box">Design Work</a>
+                <div id="dropdown">
+                    <ul>
+                        <a href="/Website/extras/fashiontechpack.html"><li>Fashion techpacks</li></a>
+                        <a href="/Website/extras/digitalpattern.html"><li>Digital patterns</li></a>
+                    </ul>
+                </div>
+            </li>
+            <li><a href="/Website/about.html">About Us</a></li>
+        </ul>
+        <div id="dropdown"></div>
+    </nav>
+    <div class="navbar2"></div>
+    <div id="wallpaper">
+        <img src="Images/pg1bgimg.png" alt="bgImage" >
+        <section id="latestBlogs">
+            <h1>Recent posts</h1>
+            <div id="blog-container"></div>
+            <a href="https://talesoftrendsblog.blogspot.com/" target="_blank"><h3>Read More</h3></a>
+        </section>
+    </div>
+
+    <div id="box">
+        <!-- <div class="box"><a href="https://talesoftrendsblog.blogspot.com/" target="_blank"><h1>Blogs</h1><p>We share our thoughts and experiences in fashion world through blog posts.</p></a></div> -->
+        <div class="box"><a href="/Website/extras/digitalpattern.html"><h1>Digital Pattern</h1><img src="Images/digitalpattern.png" alt=""><p>We create customized digital patterns and also share some of our own patterns.</p></a></div>
+        <div class="box"><a href="/Website/extras/fashiontechpack.html"><h1>Fashion tech pack</h1><img src="Images/fashiontechpack.png" alt=""><p>We create industry standard fashion techpacks.</p></a></div>
+    </div>
+
+    <div id="extraspace"></div>
+    <div id="greybox">
+        <div class="whitebox">
+            <h1>Stay in touch</h1>
+            <div id="links">
+                <a href="https://www.instagram.com/akriti_.designs/" target="_blank"><img src="Images/Instagram.png" alt="Link to Instagram" id="instagram"></a>
+                <a href="https://www.youtube.com/@akritii.designs" target="_blank"><img src="Images/Youtube.jpg" alt="Link to Youtube" id="youtube"></a>
+                <img src="Images/Facebook.png" alt="Link to Facebook" id="facebook">
+            </div>
+        </div>
+        <div class="whitebox">
+            <h1>Contact us</h1>
+            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=talesoftrend@gmail.com" target="_blank"><p>EMAIL: talesoftrend@gmail.com</p></a>
+        </div>
+    </div>
+    <div id="extraspace2"></div>
+<script>
+function loadPosts(data){
+
+let posts = data.feed.entry.slice(0,4);
+let output = "";
+
+posts.forEach(post => {
+
+let title = post.title.$t;
+
+let link = "";
+post.link.forEach(l=>{
+if(l.rel === "alternate"){ link = l.href; }
+});
+
+let date = post.published.$t.substring(0,10);
+
+let content = post.content.$t;
+let imgMatch = content.match(/<img.*?src="(.*?)"/);
+let img = imgMatch ? imgMatch[1] : "";
+
+output += `
+<div class="blog-card">
+<a href="${link}" target="_blank">
+<div class="blog-img">
+<img src="${img}" alt="${title}">
+</div>
+</a>
+<h2>${title}</h2>
+<p>${date}</p>
+<a href="${link}" target="_blank">Read More</a>
+</div>
+`;
+
+});
+
+document.getElementById("blog-container").innerHTML = output;
+}
+</script>
+
+<script src="https://talesoftrendsblog.blogspot.com/feeds/posts/default?alt=json-in-script&callback=loadPosts"></script>
+</body>
+</html>
