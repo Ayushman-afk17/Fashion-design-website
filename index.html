@@ -47,7 +47,7 @@
             <h1>Stay in touch</h1>
             <div id="links">
                 <a href="https://www.instagram.com/akriti_.designs/" target="_blank"><img src="Images/Instagram.png" alt="Link to Instagram" id="instagram"></a>
-                <a href="https://www.youtube.com/@akritii.designs" target="_blank"><img src="Images/Youtube.webp" alt="Link to Youtube" id="youtube"></a>
+                <a href="https://www.youtube.com/@akritii.designs" target="_blank"><img src="Images/Youtube.jpg" alt="Link to Youtube" id="youtube"></a>
                 <img src="Images/Facebook.png" alt="Link to Facebook" id="facebook">
             </div>
         </div>
@@ -81,7 +81,9 @@ let img = imgMatch ? imgMatch[1] : "";
 output += `
 <div class="blog-card">
 <a href="${link}" target="_blank">
+<div class="blog-img">
 <img src="${img}" alt="${title}">
+</div>
 </a>
 <h2>${title}</h2>
 <p>${date}</p>
