@@ -1,222 +1,239 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
-html {
-    scroll-behavior: smooth;
-}
+
 html, body {
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    height: auto;
     background-color: black;
+    overflow-x: hidden;
 }
+
+/* NAVBAR */
 .navbar{
     display: flex;
     position: fixed;
-    width: 100vw;
+    width: 100%;
     height: 16vh;
     background-color: #000000;
 }
+
 .navbar2{
-    display: flex;
-    width: 100vw;
+    width: 100%;
     height: 16vh;
 }
+
+/* DROPDOWN */
 #Work {
     position: relative;
 }
 
 #dropdown {
-    position: fixed;
+    position: absolute;
     top: 16vh;
-    left: -70%;
-    width: 100vw;
+    left: 0;
+    width: 100%;
     height: 10vh;
     background-color: rgb(10, 10, 10);
-    
-
-    padding: 10px 0;
-    margin: 0;
-    list-style: none;
 
     opacity: 0;
     visibility: hidden;
     transition: 0.3s ease;
-    gap: 200px;
-    margin-left: 70%;
 }
+
 #Work:hover #dropdown {
     opacity: 0.9;
     visibility: visible;
 }
+
 #dropdown ul{
-    margin-left: -10%;
+    margin-left: 10%;
 }
+
 #dropdown li{
-    margin-top: 1.2%;
+    margin-top: 1%;
     font-size: 20px;
     color: white;
 }
 
+/* NAV CONTENT */
 #icon{
     margin-top: -10px;
     height: 17vh;
-    width: auto;
-    margin-left: 10%;
+    margin-left: 5%;
 }
+
 .navbar ul {
-    position: relative;
     list-style-type: none;
-    left: 50vw;
+    margin-left: auto;
+    margin-right: 5%;
     display: flex;
     gap: 50px;
 }
+
 .navbar ul li{
     margin-top: 13%;
 }
+
 .navbar ul li a{
     text-decoration: none;
     color: #ffffff;
     font-size: 20px;
 }
 
+/* WALLPAPER */
 #wallpaper{
-    margin-left: 10vw;
+    margin-left: 5%;
     display: flex;
     align-items: flex-start;
-}
-#wallpaper img{
-    width: 40vw;
-    height: 82vh;
+    gap: 40px;
 }
 
+#wallpaper img{
+    width: 40vw;
+    height: auto;
+}
+
+/* BOX SECTION */
 #box{
     display: flex;
-    margin-left: 1%;
+    justify-content: center;
+    flex-wrap: wrap;
 }
+
 .box {
-    margin: 100px;
-    margin-top: 50px;
+    margin: 50px;
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 40vw;
-    height: 80vh;
+    height: auto;
     font-size: 20px;
     background-color: #efeeee;
+    padding: 20px;
+}
+
+/* REMOVE UNDERLINE */
+.box a{
+    text-decoration: none;
+    color: #000000;
+    display: block;
 }
 
 .box img{
     margin-top: 5%;
-    margin-left: 9.5%;
     width: 80%;
     border: 10px solid black;
 }
-.box a{
-    text-decoration: none;
-    color: #000000;
-    font-size: 7.5px;
-}
+
 .box h1 {
     font-size: 60px;
     text-align: center;
     margin-top: 20px;
 }
+
 .box p{
     text-align: center;
-    margin: 2%;
     margin-top: 5%;
     font-size: 30px;
 }
 
+/* SPACING */
 #extraspace{
-    width: 100vw;
+    width: 100%;
     height: 30vh;
 }
+
 #extraspace2{
-    width: 100vw;
-    height: 0.1vh;
+    width: 100%;
+    height: 1vh;
 }
+
+/* FOOTER */
 #greybox{
     margin: 2.5%;
-    width: 95vw;
+    width: 95%;
     height: 35vh;
-    background-color: rgb(255, 255, 255);
+    background-color: white;
     display: flex;
-    bottom: 2.5%;
     border-radius: 50px;
 }
+
 .whitebox{
-    width: 40vw;
+    width: 40%;
     height: 30vh;
-    background-color: #000000;
+    background-color: black;
     margin: 1.5%;
     margin-left: 5%;
     border-radius: 50px;
 }
-.whitebox h1{
-    font-size: 30px;
-    color: #ffffff;
-    margin-left: 35%;
-    margin-top: 10px;
-}
-#links{
-    display: flex;
-    background-color: #000000;
-}
-#instagram{
-    margin-top: 25%;
-    margin-left: 80%;
-    width: 80px;
-    height: 80px;
-}
-#youtube{
-    margin-top: 35%;
-    margin-left: 220%;
-    height: 60px;
-    width: 80px;
-}
-#facebook{
-    margin-left: 50%;
-    margin-top: 5%;
-    width: 40px;
-    height: 70px;
-}
-.whitebox p{
-    margin-top: 5%;
-    margin-left: 15%;
-    font-size: 30px;
-    color: #ffffff;
-}
+
 .whitebox a{
     text-decoration: none;
 }
 
-/* blog */
-
-#latestBlogs {
-    margin-top: 25vh;
-    text-align: center;
-    height: auto;
+.whitebox h1{
+    font-size: 30px;
+    color: white;
+    margin-left: 35%;
+    margin-top: 10px;
 }
+
+#links{
+    display: flex;
+    background-color: black;
+}
+
+#instagram{
+    margin-top: 25%;
+    margin-left: 80%;
+    width: 80px;
+}
+
+#youtube{
+    margin-top: 35%;
+    margin-left: 220%;
+    width: 80px;
+}
+
+#facebook{
+    margin-left: 50%;
+    margin-top: 5%;
+    width: 40px;
+}
+
+.whitebox p{
+    margin-top: 5%;
+    margin-left: 15%;
+    font-size: 30px;
+    color: white;
+}
+
+/* BLOG */
+#latestBlogs {
+    margin-top: 20px;
+    text-align: center;
+}
+
 #latestBlogs h1{
     font-size: 40px;
     color: white;
-    margin-top: -26vh;
     margin-left: 18vw ;
 }
+
 #latestBlogs h3{
     color: #5a6fe9;
     font-size: 20px;
     margin-left: 50%;
-    text-decoration: none;    
 }
+
 .blog-img{
     width:300px;
     height:120px;
     overflow:hidden;
     margin:auto;
-    border-radius:10px;
 }
 
 .blog-img img{
@@ -224,6 +241,7 @@ html, body {
     height:100%;
     object-fit:cover;
 }
+
 #blog-container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -231,44 +249,62 @@ html, body {
     width: 350px;
     margin: 20px;
 }
+
 .blog-card {
-    background: rgb(0, 0, 0);
+    background: black;
     padding: 10px;
     border-radius: 15px;
     text-align: center;
     border: 2px solid white;
-    max-width: 50vw;
     width: 320px;
     height: 220px; 
 }
+
 .blog-card h2 {
     font-size: 20px;
-    margin-top: 10px;
-    color: #ffffff;
+    color: white;
 }
+
 .blog-card p {
     font-size: 10px;
-    margin: 5px 0;
-    color: #ffffff;
+    color: white;
 }
+
 .blog-card a {
     font-size: 15px;
     text-decoration: none;
-    color: rgb(255, 255, 255);
-}
-.blog-card:hover{
-    background: rgb(255, 255, 255);
-    border: 10px solid rgb(0, 0, 0);
+    color: white;
 }
 
-.blog-card:hover a{
-    color: rgb(0, 0, 0);
-}
 
-.blog-card:hover p{
-    color: rgb(0, 0, 0);
-}
+@media (max-width: 768px) {
+    #latestBlogs {
+        margin-top: 10px;
+    }
+    .box h1 {
+        font-size: 28px;
+    }
 
-.blog-card:hover h2{
-    color: rgb(0, 0, 0);
+    .box p {
+        font-size: 16px;
+    }
+
+    #latestBlogs h1 {
+        font-size: 24px;
+        margin-left: 0;
+    }
+
+    #latestBlogs h3 {
+        margin-left: 0;
+    }
+
+    #links {
+        justify-content: center;
+        gap: 20px;
+    }
+
+    #instagram, #youtube, #facebook {
+        margin: 0;
+        width: 40px;
+    }
 }
